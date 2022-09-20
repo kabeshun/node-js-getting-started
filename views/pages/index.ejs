@@ -7,7 +7,12 @@
 <body>
 
   <%- include ("../partials/nav.ejs") %>
-  <script type="module" src="../../main2.js"></script>
+  <script>
+    window.onload = function() {
+      var height = document.getElementsByTagName("html")[0].scrollHeight;
+      window.parent.postMessage(["setHeight", height], "*");
+    }
+  </script>
 
 <div class="jumbotron text-center">
   <div class="container">
