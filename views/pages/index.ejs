@@ -10,7 +10,7 @@
   <script>
     window.onload = function() {
       var height = document.getElementsByTagName("html")[0].scrollHeight
-      console.error(document.getElementsByClassName("html")[0])
+      console.error(document.getElementsByTagName("html")[0])
       console.error(height);
       window.parent.postMessage(["setHeight", height], "*");
     }
