@@ -8,10 +8,10 @@
 
   <%- include ("../partials/nav.ejs") %>
   <script>
-    window.addEventListener('message', (_ev) => {
-      const elmIframe = document.querySelector('#parentframe');
-      elmIframe.style.height = _ev.data + 'px';
-    });
+    window.onload = function() {
+      var height = document.getElementsByTagName("html")[0].scrollHeight;
+      window.parent.postMessage(["setHeight", height], "*");
+    }
   </script>
 
 <div class="jumbotron text-center">
